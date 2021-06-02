@@ -22,8 +22,9 @@ const Main = () => {
           <GrClose />
         </div>
         <h1>Customize your start of day to your local timezone</h1>
-        <p>Set your start of day to make your automatic payouts reconciliation easier ot track.</p>
-        <p className="active">Learn more <BiRightArrowAlt /></p>
+        <p>Set your start of day to make your automatic payouts reconciliation easier ot track.
+        <span className="active left">Learn more <BiRightArrowAlt /></span>
+        </p>
         <button className="cta-button"> <IoSettingsSharp className="icon" />Go to payout settings</button>
       </div>
 

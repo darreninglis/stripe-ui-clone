@@ -147,8 +147,13 @@ h2 {
   background-color: var(--bg-sidebar);
   padding: 1rem;
   width: 94%;
+  min-height: 150px;
   align-self: center;
   margin-top: 0.25rem;
+}
+
+.left {
+  margin-left: 0.5rem;
 }
 
 .payouts-title {
@@ -180,7 +185,7 @@ h2 {
   border: 1px solid var(--border);
   width: 94%;
   height: 50px;
-  padding: 0 1rem;
+  padding: 1rem;
   align-self: center;
   margin: 1rem;
 }
