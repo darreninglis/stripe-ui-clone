@@ -1,38 +1,291 @@
-.App {
-  text-align: center;
+/***** Variables *****/
+:root {
+  --bg-main: rgb(255, 255, 255);
+  --bg-sidebar: rgb(247, 250, 252);
+  --font-primary: rgb(27, 30, 53);
+  --font-secondary: rgb(106, 114, 133);
+  --orange: rgb(233, 153, 110);
+  --highlight: rgb(87, 101, 208);
+  --border: rgb(227, 232, 237);
+  --alert: rgb(195, 72, 101);
+  --shadow: rgb(210, 212, 215);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/***** Zero & Defaults *****/
+* {
+  padding: 0;
+  margin: 0;
+  color: var(--font-primary);
+  font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: x-large;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: large;
+}
+
+/***** Window *****/
+.window {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-main);
+  overflow: hidden;
+}
+
+/***** Sidebar Section *****/
+.sidebar {
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-sidebar);
+  width: 20rem;
+  padding: 1rem;
+  border-right: 1px solid var(--border);
+}
+
+.new-business {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  width: 60%;
+  margin-bottom: 3rem;
+}
+
+.store-icon {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  box-shadow: 0px 2px 2px var(--shadow);
+}
+
+.title {
+  font-weight: 500;
+  font-size: larger;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  padding: 0.25rem;
+}
+
+.icon {
+  margin-right: 1rem;
+}
+
+.icon-close {
+  margin-right: 0.5rem;
+}
+
+.icon-left {
+  margin-left: 0.5rem;
+}
+
+.icon-block {
+  margin: 0 1rem;
+}
+
+.active {
+  font-weight: 700;
+  color: var(--highlight);
+}
+
+/***** Main Window Section *****/
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  background-color: var(--bg-main);
+}
+
+/***** Search Bar Section *****/
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin: 0;
+  border-bottom: 1px solid var(--orange);
+  padding: 1rem;
+}
+
+/***** Test Data Tab *****/
+.test-data-tab {
+  display: flex;
+  text-align: center;
+  background-color: var(--orange);
+  width: 60px;
+  padding: 0.1rem 0.5rem;
+  font-size: 10px;
+  font-weight: 700;
   color: white;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  align-self: center;
 }
 
-.App-link {
-  color: #61dafb;
+/***** Payouts Component *****/
+.payouts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  height: 200px;
+  border-radius: 4px;
+  background-color: var(--bg-sidebar);
+  padding: 1rem;
+  width: 94%;
+  align-self: center;
+  margin-top: 0.25rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.payouts-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cta-button {
+  background-color: var(--highlight);
+  border: none;
+  padding: 0.6rem 0.4rem;
+  width: 200px;
+  color: white;
+  border-radius: 4px;
+}
+
+.cta-button:hover {
+  cursor: pointer;
+}
+
+/***** Add bank account Component *****/
+.add-bank-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  width: 94%;
+  height: 50px;
+  padding: 0 1rem;
+  align-self: center;
+  margin: 1rem;
+}
+
+.cta-button-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 1rem;
+  background-color: var(--bg-main);
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0px 2px 2px var(--shadow);
+}
+
+.cta-button-white:hover {
+  cursor: pointer;
+  box-shadow: 0px 2px 4px var(--shadow);
+}
+
+.balance-section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 94%;
+}
+
+.balance-title {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.balance-title-container {
+  display: flex;
+  justify-content: space-between;
+  width: 215px;
+  margin-bottom: 3rem;
+}
+
+.aud-balance-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.aud-balance-section-clear {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.flow-right {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.highlight-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-sidebar);
+  width: 200px;
+  height: 100px;
+  padding: 1rem;
+  margin: 1rem;
+  margin-left: 5rem;
+  border-radius: 4px;
+  padding-bottom: 2rem;
+}
+
+.highlight-title {
+  background-color: var(--border);
+  color: var(--font-secondary);
+  font-size: small;
+  font-weight: 500;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.highlight-box p {
+  color: var(--font-secondary);
+  margin-top: 0.5rem;
+}
+
+.break {
+  background-color: var(--border) !important;
+  margin: 4rem 0;
+  border: none;
+  height: 1px;
 }
